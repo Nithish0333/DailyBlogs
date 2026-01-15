@@ -1,3 +1,0 @@
-This is react project
-
-The frontend was in frontend branch
