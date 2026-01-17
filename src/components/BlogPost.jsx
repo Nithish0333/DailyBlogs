@@ -4,7 +4,13 @@ import './BlogPost.css';
 
 function BlogPost() {
   const { id } = useParams();
-  const post = blogPosts.find(p => p.id === parseInt(id));
+  const postId = parseInt(id);
+  
+  // Get user posts from localStorage
+  const userPosts = JSON.parse(localStorage.getItem('userPosts') || '[]');
+  
+  // Check both user posts and static posts
+  const post = userPosts.find(p => p.id === postId) || blogPosts.find(p => p.id === postId);
 
   if (!post) {
     return (

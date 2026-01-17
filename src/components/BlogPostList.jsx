@@ -3,6 +3,12 @@ import { blogPosts } from '../data/blogPosts';
 import './BlogPostList.css';
 
 function BlogPostList() {
+  // Get user posts from localStorage
+  const userPosts = JSON.parse(localStorage.getItem('userPosts') || '[]');
+  
+  // Combine static posts and user posts, with user posts first (newest first)
+  const allPosts = [...userPosts.reverse(), ...blogPosts];
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 
@@ -19,7 +25,7 @@ function BlogPostList() {
         <p>Discover our latest articles and insights</p>
       </div>
       <div className="blog-posts-grid">
-        {blogPosts.map((post) => (
+        {allPosts.map((post) => (
           <article key={post.id} className="blog-card">
             <div className="blog-card-category">{post.category}</div>
             <Link to={`/post/${post.id}`} className="blog-card-link">
