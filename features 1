@@ -1,0 +1,34 @@
+1. Advanced Authentication & User System
+
+Email verification
+
+Social login (Google/GitHub)
+
+Two-Factor Authentication (2FA)
+
+Role-based access (Admin, Author, Editor, User)
+
+User profile with bio, social links, profile image
+
+Activity history dashboard
+
+
+
+2. Advanced Blog Editor
+
+Rich text editor (like Medium)
+
+Markdown support
+
+Code syntax highlighting
+
+Image drag & drop upload
+
+Auto-save draft
+
+Scheduled publishing
+
+SEO preview before publish
+
+
+
